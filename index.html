@@ -1,24 +1,47 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-<script src="scripts/setup.js"></script>
-<script src="scripts/localmap.js"></script>
-<script src="scripts/objects.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-}
-</style>
-</head>
-<body onload="startGame()">
-<canvas id="canvas" width="500" height="300">
-<div id="images"></div>
-</body>
-<script src="scripts/quests.js"></script>
-<script src="scripts/rendering.js"></script>
-<script src="scripts/display.js"></script>
-<script src="scripts/actions.js"></script>
-<script src="scripts/main.js"></script>
+	<head>
+		<title>ArkPublic</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>ArkPublic</h1>
+						<p>Public &nbsp;&bull;&nbsp; Software &nbsp;&bull;&nbsp; Design &nbsp;&bull;&nbsp; Cinema</p>
+						<nav>
+							<ul>
+								<li><a href="https://twitter.com/arkpublic?s=09" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/arkpublic" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.youtube.com/channel/UCefA78kOIKaBJBjvyU2wgdQ/featured" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; ArkPublic. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
 </html>
