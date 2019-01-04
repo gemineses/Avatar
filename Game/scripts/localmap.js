@@ -5,44 +5,72 @@ var sizeMapY = (gameAreaSetHeight/fontSizeMap)*2;//how many grounds characters f
 var groundsType = [
 	{
 		name: "sand",
-		icon: "░",
 		color: "#ffecb3"
-		
 	},
 	{
 		name: "water",
-		icon: "~",
 		color: "#b3e6ff"
 	},
 	{
 		name: "grass",
-		icon: "▒",
 		color: "#009900"
+	},
+	{
+		name: "default",
+		color: "#FFF"
+	},
+	{
+		name: "defaultblack",
+		color: "#FFFF09"
 	}
 	]
+	/*MAX 2000 px x 2000px*/
 function generateMap(){
-	MAPPROCEDURE = [{
-		ground: groundsType[0],
-		x:[0, 500],
-		y:[0, 100]
-	},{
-		ground: groundsType[1],
-		x:[0, 500],
-		y:[100, 200]
-	},{
-		ground: groundsType[2],
-		x:[0, 500],
-		y:[200, 300]
-	}
-	];
+	MAPPROCEDURE = {
+		dimensions: {
+			x: 2000,
+			y: 2000
+		},
+		checkpoint: {
+			x: 200,
+			y: 200,
+		},
+		map : [{
+				ground: groundsType[3],
+				x:[0, 500],
+				y:[0, 1000]
+			},{
+				ground: groundsType[4],
+				x:[500, 1000],
+				y:[0, 1000]
+			},{
+				ground: groundsType[3],
+				x:[1000, 1500],
+				y:[0, 2000]
+			},{
+				ground: groundsType[4],
+				x:[1500, 2000],
+				y:[0, 2000]
+			}
+			,{
+				ground: groundsType[3],
+				x:[0, 500],
+				y:[1000, 2000]
+			}
+			,{
+				ground: groundsType[4],
+				x:[500, 1000],
+				y:[1000, 2000]
+			}
+		]
+	};
 	
 	//Generating patterns
-	for(var index = 0; index< MAPPROCEDURE.length; index++){
+	for(var index = 0; index< MAPPROCEDURE.map.length; index++){
 		tmpElement = document.createElement("img");
-		tmpElement.setAttribute("src", "texture/"+MAPPROCEDURE[index].ground.name+".png");
-		tmpElement.setAttribute("id", "img"+MAPPROCEDURE[index].ground.name);
+		tmpElement.setAttribute("src", "texture/"+MAPPROCEDURE.map[index].ground.name+".png");
+		tmpElement.setAttribute("id", "img"+MAPPROCEDURE.map[index].ground.name);
 		document.getElementById("images").appendChild(tmpElement);
 		
 	}
-	
 }

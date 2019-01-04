@@ -4,7 +4,7 @@ function startGame() {
 	setCharacters();
 	generateMap();
     gameArea.start();
-	addMessage('test');
+	startQuest(quests.login)
 }
 
 

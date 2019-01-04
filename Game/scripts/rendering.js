@@ -1,5 +1,4 @@
 /*CORE VARIABLES, DONTTTTT TOUCH!!*/
-var GlobalMap = [{row:1, column: "A"}]
 var mousePosition = {x: 0, y:0}
 var moving = {x: false, y: false}
 var charactersList = [];
@@ -25,8 +24,19 @@ function setCharacters(){
 	}
 }
 
+function hardMove(x, y){
+	charactersList[0].x = x
+	charactersList[0].y = y
+	mousePosition.x = x
+	mousePosition.y = y
+	
+}
+
 function moveCharacters(){
 	for(index = 0; index < players.me.length; index++){
+		if(charactersList[index].x == mousePosition.x && charactersList[index].y == mousePosition.y){
+			isRequiredMoveCharacter = false;
+		}
 		tmpSpeed = charactersList[index].speed
 		if(charactersList[index].x > mousePosition.x){
 			charactersList[index].x = move(charactersList[index].x, -1, tmpSpeed)
